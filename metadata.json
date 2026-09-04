@@ -1,0 +1,6 @@
+{
+  "name": "Jabel",
+  "description": "Premium storefront for Jabel jewelry and wares.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

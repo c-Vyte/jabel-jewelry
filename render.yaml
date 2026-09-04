@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: jabel-jewelry
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: GROK_API_KEY
+        sync: false
+      - key: VITE_CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: VITE_CLOUDINARY_UPLOAD_PRESET
+        sync: false
+      - key: VITE_CLOUDINARY_API_KEY
+        sync: false
+      - key: APP_URL
+        sync: false
+    healthCheckPath: /
+    autoDeploy: true

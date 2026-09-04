@@ -1,0 +1,91 @@
+import { Product } from './types';
+
+export const products: Product[] = [
+  {
+    id: '1',
+    name: 'Eternity Diamond Ring',
+    category: 'Rings',
+    price: 15500,
+    image: 'https://images.unsplash.com/photo-1605100804763-247f6612224b?auto=format&fit=crop&q=80&w=800',
+    isNew: true,
+  },
+  {
+    id: '2',
+    name: 'Classic Chronograph Watch',
+    category: 'Watches',
+    price: 11200,
+    image: 'https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&q=80&w=800',
+  },
+  {
+    id: '3',
+    name: 'Gold Horizon Necklace',
+    category: 'Necklaces',
+    price: 5800,
+    image: 'https://images.unsplash.com/photo-1599643478514-4a4204b4d451?auto=format&fit=crop&q=80&w=800',
+  },
+  {
+    id: '4',
+    name: 'Pearl Drop Earrings',
+    category: 'Earrings',
+    price: 3900,
+    image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&q=80&w=800',
+  },
+  {
+    id: '5',
+    name: 'Minimalist Silver Band',
+    category: 'Rings',
+    price: 2500,
+    image: 'https://images.unsplash.com/photo-1620656798579-1984d9e97e1d?auto=format&fit=crop&q=80&w=800',
+  },
+  {
+    id: '6',
+    name: 'Sapphire Pendant',
+    category: 'Necklaces',
+    price: 8400,
+    image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&q=80&w=800',
+    isNew: true,
+  },
+  {
+    id: '7',
+    name: 'Vintage Leather Watch',
+    category: 'Watches',
+    price: 6700,
+    image: 'https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&q=80&w=800',
+  },
+  {
+    id: '8',
+    name: 'Rose Gold Bracelet',
+    category: 'Accessories',
+    price: 3400,
+    image: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&q=80&w=800',
+  },
+  {
+    id: '9',
+    name: 'Diamond Stud Earrings',
+    category: 'Earrings',
+    price: 12500,
+    image: 'https://images.unsplash.com/photo-1630019852942-f89202989a53?auto=format&fit=crop&q=80&w=800',
+    isNew: true,
+  },
+  {
+    id: '10',
+    name: 'Gold Hoop Earrings',
+    category: 'Earrings',
+    price: 4800,
+    image: 'https://images.unsplash.com/photo-1635767798638-3e2523422c44?auto=format&fit=crop&q=80&w=800',
+  },
+  {
+    id: '11',
+    name: 'Chandelier Earrings',
+    category: 'Earrings',
+    price: 8900,
+    image: 'https://images.unsplash.com/photo-1621592014428-4c8e9c7f2d3c?auto=format&fit=crop&q=80&w=800',
+  },
+  {
+    id: '12',
+    name: 'Emerald Drop Earrings',
+    category: 'Earrings',
+    price: 11200,
+    image: 'https://images.unsplash.com/photo-1630019852942-f89202989a53?auto=format&fit=crop&q=80&w=800',
+  }
+];
