@@ -12,10 +12,11 @@ interface HomeProps {
   products: Product[];
   searchQuery: string;
   onAddToCart: (product: Product) => void;
+  initialCategory?: string;
 }
 
-export default function Home({ products, searchQuery, onAddToCart }: HomeProps) {
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+export default function Home({ products, searchQuery, onAddToCart, initialCategory }: HomeProps) {
+  const [selectedCategories, setSelectedCategories] = useState<string[]>(initialCategory ? [initialCategory] : []);
   const [priceRange, setPriceRange] = useState({ min: 0, max: 50000 });
   const [sortBy, setSortBy] = useState('featured');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');

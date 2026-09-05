@@ -21,6 +21,7 @@ interface HeaderProps {
   searchQuery: string;
   setSearchQuery: (query: string) => void;
   isAdminRoute: boolean;
+  onNavigate: (hash: string) => void;
 }
 
 export default function Header({ cartCount, onOpenCart, searchQuery, setSearchQuery, isAdminRoute }: HeaderProps) {
@@ -39,9 +40,12 @@ export default function Header({ cartCount, onOpenCart, searchQuery, setSearchQu
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden sm:flex space-x-8">
-              <a href="#" className="text-sm font-medium text-theme-muted hover:text-theme-text transition-colors">Home</a>
-              <a href="#admin" className="text-sm font-medium text-theme-muted hover:text-theme-text transition-colors">Admin Panel</a>
+            <nav className="hidden sm:flex items-center gap-6" aria-label="Main navigation">
+              <a href="#" className="text-sm font-medium text-theme-muted hover:text-theme-text transition-colors">Shop</a>
+              <a href="#collection" className="text-sm font-medium text-theme-muted hover:text-theme-text transition-colors">All Products</a>
+              <button onClick={() => onNavigate('#category/Necklaces')} className="text-sm font-medium text-theme-muted hover:text-theme-text transition-colors">Necklaces</button>
+              <button onClick={() => onNavigate('#category/Watches')} className="text-sm font-medium text-theme-muted hover:text-theme-text transition-colors">Watches</button>
+              <button onClick={() => onNavigate('#category/Rings')} className="text-sm font-medium text-theme-muted hover:text-theme-text transition-colors">Rings</button>
             </nav>
 
             {/* Logo */}
@@ -120,15 +124,3 @@ export default function Header({ cartCount, onOpenCart, searchQuery, setSearchQu
     </>
   );
 }
-
-const searchVariants = {
-  initial: { height: 0, opacity: 0 },
-  animate: { height: 'auto', opacity: 1 },
-  exit: { height: 0, opacity: 0 }
-};
-
-const searchTransition = {
-  type: "spring",
-  stiffness: 300,
-  damping: 30
-};

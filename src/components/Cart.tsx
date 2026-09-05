@@ -157,34 +157,6 @@ export default function Cart({ isOpen, onClose, cart, setCart }: CartProps) {
     alert('Order placed successfully! We\'ll contact you via WhatsApp shortly.');
   };
 
-  const cartVariants = {
-    overlay: {
-      initial: { opacity: 0 },
-      animate: { opacity: 1 },
-      exit: { opacity: 0 }
-    },
-    panel: {
-      initial: { x: '100%', opacity: 0 },
-      animate: { x: 0, opacity: 1 },
-      exit: { x: '100%', opacity: 0 }
-    },
-    checkout: {
-      initial: { x: '100%', opacity: 0 },
-      animate: { x: 0, opacity: 1 },
-      exit: { x: '100%', opacity: 0 }
-    },
-    item: {
-      initial: { opacity: 0, x: -20 },
-      animate: { opacity: 1, x: 0 },
-      exit: { opacity: 0, x: 20 }
-    }
-  };
-
-  const cartTransition = {
-    type: "spring",
-    stiffness: 280,
-    damping: 25
-  };
 
   if (showCheckout) {
     return (
@@ -285,34 +257,6 @@ export default function Cart({ isOpen, onClose, cart, setCart }: CartProps) {
       </AnimatePresence>
     );
   }
-
-  const cartSubtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
-  const giftWrapTotal = cart.reduce((total, item) => total + (item.giftWrap?.enabled ? (item.giftWrap?.price || 0) : 0), 0);
-  const cartTotal = cartSubtotal + giftWrapTotal;
-
-  const cartVariants = {
-    overlay: {
-      initial: { opacity: 0 },
-      animate: { opacity: 1 },
-      exit: { opacity: 0 }
-    },
-    panel: {
-      initial: { x: '100%', opacity: 0 },
-      animate: { x: 0, opacity: 1 },
-      exit: { x: '100%', opacity: 0 }
-    },
-    item: {
-      initial: { opacity: 0, x: -20 },
-      animate: { opacity: 1, x: 0 },
-      exit: { opacity: 0, x: 20 }
-    }
-  };
-
-  const cartTransition = {
-    type: "spring",
-    stiffness: 280,
-    damping: 25
-  };
 
   return (
     <AnimatePresence>
@@ -469,7 +413,3 @@ export default function Cart({ isOpen, onClose, cart, setCart }: CartProps) {
     </AnimatePresence>
   );
 }
-
-const cartSubtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
-const giftWrapTotal = cart.reduce((total, item) => total + (item.giftWrap?.enabled ? (item.giftWrap?.price || 0) : 0), 0);
-const cartTotal = cartSubtotal + giftWrapTotal;

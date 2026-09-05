@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import { Sun, Moon, Rose, Sparkles } from 'lucide-react';
+import { Sun, Moon, Circle, Sparkles } from 'lucide-react';
 
 const themes = [
   { id: 'light', name: 'Light', icon: Sun, colors: { bg: '#FAFAFA', text: '#1c1917' } },
   { id: 'dark', name: 'Dark', icon: Moon, colors: { bg: '#121212', text: '#f5f5f5' } },
-  { id: 'rose', name: 'Rose', icon: Rose, colors: { bg: '#fdf8f8', text: '#4a3636' } },
+  { id: 'rose', name: 'Rose', icon: Circle, colors: { bg: '#fdf8f8', text: '#4a3636' } },
   { id: 'midnight', name: 'Midnight', icon: Sparkles, colors: { bg: '#0f172a', text: '#f8fafc' } }
 ] as const;
 
