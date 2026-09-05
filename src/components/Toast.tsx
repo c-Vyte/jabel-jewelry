@@ -72,16 +72,3 @@ export default function Toast({ product, onClose, onOpenCart }: ToastProps) {
     </AnimatePresence>
   );
 }
-
-const toastVariants = {
-  initial: { opacity: 0, y: 60, scale: 0.9, rotateX: 15 },
-  animate: { opacity: 1, y: 0, scale: 1, rotateX: 0 },
-  exit: { opacity: 0, y: 30, scale: 0.95, rotateX: -10 }
-};
-
-const toastTransition = {
-  type: "spring",
-  stiffness: 220,
-  damping: 20,
-  mass: 1.2
-};

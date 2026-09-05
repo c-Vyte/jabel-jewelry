@@ -56,7 +56,6 @@ export default function ProductDetail({ product, onAddToCart }: ProductDetailPro
 
           <div className="prose prose-stone text-theme-muted font-light mb-12 leading-relaxed transition-colors">
             <p>{product.description || "An exquisite piece crafted with precision and care, designed to elevate your everyday elegance. Each detail is thoughtfully refined for the modern sophisticate, blending timeless tradition with contemporary grace."}</p>
-          </p>
           </div>
 
           {giftWrapEnabled && (
