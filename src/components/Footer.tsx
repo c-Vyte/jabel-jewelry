@@ -1,4 +1,8 @@
-export default function Footer() {
+interface FooterProps {
+  onNavigate: (hash: string) => void;
+}
+
+export default function Footer({ onNavigate }: FooterProps) {
   return (
     <footer className="bg-theme-surface border-t border-theme-border transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
@@ -18,10 +22,10 @@ export default function Footer() {
           <div>
             <h4 className="font-medium text-theme-text mb-4 uppercase tracking-wider text-sm">Quick Links</h4>
             <nav className="space-y-3">
-              <a href="#" className="text-theme-muted hover:text-theme-text transition-colors text-sm block">Shop All</a>
+              <a href="#collection" className="text-theme-muted hover:text-theme-text transition-colors text-sm block">Shop All</a>
               <a href="#admin" className="text-theme-muted hover:text-theme-text transition-colors text-sm block">Admin Panel</a>
-              <a href="#" className="text-theme-muted hover:text-theme-text transition-colors text-sm block">Gift Guide</a>
-              <a href="#" className="text-theme-muted hover:text-theme-text transition-colors text-sm block">Our Story</a>
+              <button onClick={() => onNavigate('#support')} className="text-theme-muted hover:text-theme-text transition-colors text-sm block">Gift Guide</button>
+              <button onClick={() => onNavigate('#support')} className="text-theme-muted hover:text-theme-text transition-colors text-sm block">Our Story</button>
             </nav>
           </div>
 
@@ -29,10 +33,10 @@ export default function Footer() {
           <div>
             <h4 className="font-medium text-theme-text mb-4 uppercase tracking-wider text-sm">Customer Service</h4>
             <nav className="space-y-3">
-              <a href="#" className="text-theme-muted hover:text-theme-text transition-colors text-sm block">Shipping & Returns</a>
-              <a href="#" className="text-theme-muted hover:text-theme-text transition-colors text-sm block">Size Guide</a>
-              <a href="#" className="text-theme-muted hover:text-theme-text transition-colors text-sm block">Care Instructions</a>
-              <a href="#" className="text-theme-muted hover:text-theme-text transition-colors text-sm block">Contact Us</a>
+              <button onClick={() => onNavigate('#shipping')} className="text-theme-muted hover:text-theme-text transition-colors text-sm block">Shipping & Returns</button>
+              <button onClick={() => onNavigate('#support')} className="text-theme-muted hover:text-theme-text transition-colors text-sm block">Size Guide</button>
+              <button onClick={() => onNavigate('#care')} className="text-theme-muted hover:text-theme-text transition-colors text-sm block">Care Instructions</button>
+              <button onClick={() => onNavigate('#support')} className="text-theme-muted hover:text-theme-text transition-colors text-sm block">Contact Us</button>
             </nav>
           </div>
         </div>

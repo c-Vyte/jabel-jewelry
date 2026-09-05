@@ -99,6 +99,9 @@ export default function App() {
   };
 
   const cartItemsCount = cart.reduce((total, item) => total + item.quantity, 0);
+  const handleNavigate = (hash: string) => {
+    window.location.hash = hash;
+  };
 
   let content;
   if (route === '#admin') {
@@ -107,6 +110,9 @@ export default function App() {
     const productId = route.split('/')[1];
     const product = products.find(p => p.id === productId);
     content = <ProductDetail product={product} onAddToCart={handleAddToCart} />;
+  } else if (route.startsWith('#category/')) {
+    const category = decodeURIComponent(route.split('/')[1] || '');
+    content = <Home products={products} searchQuery={searchQuery} onAddToCart={handleAddToCart} initialCategory={category} />;
   } else {
     content = <Home products={products} searchQuery={searchQuery} onAddToCart={handleAddToCart} />;
   }
@@ -121,6 +127,7 @@ export default function App() {
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
         isAdminRoute={route === '#admin'}
+        onNavigate={handleNavigate}
       />
       <main className="flex-grow relative">
         {isLoading ? (
@@ -152,7 +159,7 @@ export default function App() {
           </motion.div>
         </AnimatePresence>
       </main>
-      <Footer />
+      <Footer onNavigate={handleNavigate} />
       
       <Cart 
         isOpen={isCartOpen} 
